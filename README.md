@@ -27,14 +27,12 @@ Al diseñar o extender formatos en el futuro, declara los siguientes parámetros
 | **`DS_RECEPTOR`** | `net.sf.jasperreports.engine.JRDataSource` | **Global** | Colección genérica del Receptor. |
 | **`DS_IMPUESTOS`** | `net.sf.jasperreports.engine.JRDataSource` | **Global** | Colección genérica de Impuestos del CFDI. |
 | **`DS_TFD`** | `net.sf.jasperreports.engine.JRDataSource` | **Global** | Colección genérica del Timbre Fiscal Digital. |
-| **`SUBREPORT_DIR`** | `java.lang.String` | **Global** | Ruta interna del Classpath (ej. `reports/factura/`) para enlazar subreportes relacionados al CFDI v4.0. |
-| **`SUBREPORT_DIR_PAGOS`** | `java.lang.String` | **Global** | Ruta interna del Classpath (ej. `reports/pagos/`) para enlazar subreportes relacionados al complemento de Pago 2.0. |
 | **`DS_PAGOS`** | `net.sf.jasperreports.engine.JRDataSource` | *Complemento Pagos* | Lista de objetos `mx.gob.sat.pagos20.Pagos.Pago`. |
 | **`DS_NOMINA_CORE`** | `net.sf.jasperreports.engine.JRDataSource` | *Complemento Nómina* | Nodo base encapsulado `mx.gob.sat.nomina12.Nomina`. |
 | **`DS_PERCEPCIONES`**| `net.sf.jasperreports.engine.JRDataSource` | *Complemento Nómina* | Conceptos de ingresos ordinarios/extraordinarios. |
 | **`DS_DEDUCCIONES`** | `net.sf.jasperreports.engine.JRDataSource` | *Complemento Nómina* | Retenciones, impuestos y descuentos del empleado. |
 
-> 💡 **Nota de Extensibilidad:** Si en el futuro se incorpora un nuevo complemento (por ejemplo, *Carta Porte*), bastará con registrar un nuevo `CartaPorteProcessor` que inyecte su respectivo `DS_CARTAPORTE` al mapa de parámetros, sin alterar los reportes de Factura o Nómina existentes.
+> 💡 **Nota de Extensibilidad:** Si en el futuro se incorpora un nuevo complemento (por ejemplo, *Carta Porte*), bastará con registrar un nuevo `CartaPorteProcessor` que inyecte su respectivo `DS_CARTAPORTE` al mapa de parámetros, sin alterar los reportes de Factura o Nómina existentes. Adicionalmente se han introducido otros parámetros de JasperReports indicando sólamente un objeto en lugar de una colección, debido a que en algún momento de la elaboración del reporte se requiere puntualmente la información de dicho objeto, sus dependencias u otro tipo de información ajena a la información del CFDI.
 
 ---
 
@@ -66,9 +64,11 @@ cfdi-reader/
                            └── ...
 ```
 
+> 💡 **Nota:** La estructura propuesta es sólamente demostrativa. La creación de objetos final dependerá de las necesidades del diseño del reporte en Jaspersoft Studio (versión 6.20 al momento de la creación de este proyecto).
+
 ---
 
-## 💻 Clase de Orquestación e Impresión (`FacturaJR`)
+## 💻 Clase de Orquestación e Impresión (`CFDIv40JR`)
 
 A continuación, se detalla la implementación de la clase encargada de coordinar todo el flujo. Recibe el XML de forma abstracta a través de un `InputStream`, invoca al motor de lectura de negocio y retorna el documento final en un flujo binario compatible con cualquier entorno.
 
@@ -160,13 +160,13 @@ public class FacturaJR {
 
 ## 🔌 Consumo desde Proyectos Externos
 
-Cualquier microservicio o proyecto intermedio puede consumir esta librería simplemente instanciando `FacturaJR` de la siguiente manera:
+Cualquier microservicio o proyecto intermedio puede consumir esta librería simplemente instanciando `CFDIv40JR` de la siguiente manera:
 
 ```java
 // Código ejemplo en un proyecto API Web o Consumidor externo
 InputStream streamXmlDesdeProveedor = ...; 
 
-FacturaJR exporter = new FacturaJR();
+CFDIv40JR exporter = new CFDIv40JR();
 byte[] pdfBytes = exporter.generarFormatoImpreso(streamXmlDesdeProveedor);
 
 // El arreglo de bytes está listo para responderse en un HTTP Response, 
