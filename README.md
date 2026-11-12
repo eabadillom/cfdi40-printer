@@ -13,6 +13,37 @@ El ecosistema está desacoplado en dos componentes clave:
 2. **`cfdi40-printer`** (Este proyecto): Contiene los procesadores específicos, la carga unmarshal de JAXB, los reportes compilados `.jasper` y la exportación final a PDF.
 
 ---
+## 🖨️ Configuración de JasperSoft Studio
+
+Para diseñar y previsualizar los reportes (`.jrxml`) en **JasperSoft Studio 6.20.x**, el proyecto de reportes necesita conocer las clases del modelo del CFDI y las de la capa de impresión. Para ello, agrega los siguientes archivos `.jar` al *build path* del proyecto:
+
+| Archivo | Contenido |
+|---|---|
+| `cfdi40-model-xxx.jar` | Clases JAXB generadas a partir de los XSD del SAT (`Comprobante`, complementos, etc.) |
+| `cfdi40-printer-xxx.jar` | Clases de apoyo para el armado y formateo de la representación impresa |
+
+> Sustituye `xxx` por la versión correspondiente (por ejemplo, `1.1.0-SNAPSHOT`). Los jar se generan con `mvn clean install` y quedan en la carpeta `target/` de cada proyecto, y también en tu repositorio local de Maven (`~/.m2/repository/...`).
+
+### Pasos
+
+1. Abre JasperSoft Studio y localiza tu proyecto en el **Project Explorer** (Explorador de proyectos).
+2. Haz clic derecho sobre el proyecto y selecciona **Build Path → Configure Build Path...**
+3. Abre la pestaña **Libraries**.
+4. Haz clic en **Add External JARs...** y selecciona `cfdi40-model-xxx.jar` y `cfdi40-printer-xxx.jar`.
+5. Presiona **Apply and Close**.
+6. Cierra y vuelve a abrir el `.jrxml` (o ejecuta *Project → Clean...*) para que el diseñador recargue las clases.
+
+### Verificación
+
+- En el proyecto debe aparecer, bajo **Referenced Libraries**, la lista de ambos jar.
+- Al compilar el reporte no deben aparecer errores del tipo `ClassNotFoundException` ni `cannot be resolved to a type`.
+
+### Notas
+
+- Cada vez que publiques una nueva versión de `cfdi40-model` o `cfdi40-printer`, **reemplaza el jar** en el *build path*; Studio no detecta los cambios automáticamente. Una alternativa es que importes los archivos .jar desde sus rutas `target` de cada proyecto y al realizar algún cambio, reinicies JasperSoft Studio.
+- Si el jar de `cfdi40-printer` no incluye sus dependencias, agrega también las que use tu código y que Studio no traiga por defecto (por ejemplo, `log4j-api`).
+- Mantén las versiones de ambos jar alineadas entre sí.
+
 
 ## 📝 Resumen de Parámetros para JasperReports
 
@@ -32,7 +63,7 @@ Al diseñar o extender formatos en el futuro, declara los siguientes parámetros
 | **`DS_PERCEPCIONES`**| `net.sf.jasperreports.engine.JRDataSource` | *Complemento Nómina* | Conceptos de ingresos ordinarios/extraordinarios. |
 | **`DS_DEDUCCIONES`** | `net.sf.jasperreports.engine.JRDataSource` | *Complemento Nómina* | Retenciones, impuestos y descuentos del empleado. |
 
-> 💡 **Nota de Extensibilidad:** Si en el futuro se incorpora un nuevo complemento (por ejemplo, *Carta Porte*), bastará con registrar un nuevo `CartaPorteProcessor` que inyecte su respectivo `DS_CARTAPORTE` al mapa de parámetros, sin alterar los reportes de Factura o Nómina existentes. Adicionalmente se han introducido otros parámetros de JasperReports indicando sólamente un objeto en lugar de una colección, debido a que en algún momento de la elaboración del reporte se requiere puntualmente la información de dicho objeto, sus dependencias u otro tipo de información ajena a la información del CFDI.
+> 💡 **Nota de Extensibilidad:** Si en el futuro se incorpora un nuevo complemento (por ejemplo, *Carta Porte*), bastará con registrar un nuevo `CartaPorteProcessor` que inyecte su respectivo `DS_CARTAPORTE` al mapa de parámetros, sin alterar los reportes de Factura o Nómina existentes. Adicionalmente se han introducido otros parámetros de JasperReports indicando sólamente un objeto en lugar de una colección, debido a que en algún momento de la elaboración del reporte, se requiere puntualmente la información de dicho objeto, sus dependencias u otro tipo de información ajena a la información del CFDI.
 
 ---
 
@@ -167,6 +198,17 @@ Cualquier microservicio o proyecto intermedio puede consumir esta librería simp
 InputStream streamXmlDesdeProveedor = ...; 
 
 CFDIv40JR exporter = new CFDIv40JR();
+
+//En el caso de que la impresión de una factura necesite la sección de
+//observaciones, se pueden agregar manualmente. Esto NO es parte de la
+//especificación del CFDI v.4.0, sin embargo, otros PAC proporcionan
+//esta característica.
+//exporter.setObservacion("Observación de prueba");
+
+//También se puede establecer la ruta a un logotipo personalizado.
+//Puede ser PNG, JPG u otro tipo gráfico soportado por JasperReports.
+exporter.setLogo("/ruta/absoluta/al/archivo.png")
+
 byte[] pdfBytes = exporter.generarFormatoImpreso(streamXmlDesdeProveedor);
 
 // El arreglo de bytes está listo para responderse en un HTTP Response, 
