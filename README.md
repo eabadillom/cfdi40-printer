@@ -1,4 +1,4 @@
-# cfdi-reader
+# cfdi40-printer
 
 Librería modular y portátil escrita en **Java SE** para la lectura, validación de negocio y preparación de impresión del estándar **CFDI 4.0 (SAT México)**. 
 
@@ -10,7 +10,7 @@ Este proyecto está diseñado bajo los patrones de diseño **Factory** y **Strat
 
 El ecosistema está desacoplado en dos componentes clave:
 1. **`cfdi40-model`**: Contiene exclusivamente las clases planas (POJOs) generadas por `xjc` a partir de los esquemas `.xsd` del SAT (`Comprobante`, `Pagos`, `Nomina`). independiente de la lógica visual o persistencia.
-2. **`cfdi-reader`** (Este proyecto): Contiene los procesadores específicos, la carga unmarshal de JAXB, los reportes compilados `.jasper` y la exportación final a PDF.
+2. **`cfdi40-printer`** (Este proyecto): Contiene los procesadores específicos, la carga unmarshal de JAXB, los reportes compilados `.jasper` y la exportación final a PDF.
 
 ---
 
@@ -41,7 +41,7 @@ Al diseñar o extender formatos en el futuro, declara los siguientes parámetros
 Los archivos de diseño visual compilados deben guardarse estrictamente en la sección de recursos del proyecto. **Es mandatorio incluir los archivos `.jasper` ya compilados** para optimizar el rendimiento y evitar la compilación en tiempo de ejecución:
 
 ```text
-cfdi-reader/
+cfdi40-printer/
 └── src/
     └── main/
         └── resources/
