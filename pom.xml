@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ferbo.sat</groupId>
 	<artifactId>cfdi40-printer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>cfdi40-printer</name>
 	<description>Biblioteca para imprimir CFDI 4.0 del SAT usando cfdi40-model</description>

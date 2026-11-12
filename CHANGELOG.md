@@ -4,7 +4,7 @@ Todos los cambios importantes en este proyecto serán documentados en este archi
 
 Este proyecto sigue versionado semántico (SemVer) y el formato de [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/).
 
-## [1.0.0] - 2026-11-11
+## [1.0.0] - 2026-11-12
 
 ### Added
 
@@ -12,6 +12,5 @@ Este proyecto sigue versionado semántico (SemVer) y el formato de [Keep a Chang
 - Tipos de CFDI soportados:
   - CFDI 4.0 Tipo Ingresos.
   - Complemento de pago 2.0
-  - Complemento de Nómina 1.2
 - Soporte para lectura del XML del SAT, desde InputStream y Filesystem.
 - Depende de [cfdi40-model](https://github.com/eabadillom/cfdi40-model) versión 1.0.0 
