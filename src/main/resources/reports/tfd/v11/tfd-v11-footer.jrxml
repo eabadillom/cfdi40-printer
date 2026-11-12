@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.19.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tfd-v11-footer" pageWidth="572" pageHeight="752" columnWidth="572" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="baca66c7-9f5b-4832-9a86-88a2c454083e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="comprobante" class="mx.gob.sat.cfdi.v40.Comprobante"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="rfcProvCertif" class="java.lang.String">
+		<fieldDescription><![CDATA[rfcProvCertif]]></fieldDescription>
+	</field>
+	<field name="selloSAT" class="java.lang.String">
+		<fieldDescription><![CDATA[selloSAT]]></fieldDescription>
+	</field>
+	<field name="leyenda" class="java.lang.String">
+		<fieldDescription><![CDATA[leyenda]]></fieldDescription>
+	</field>
+	<field name="selloCFD" class="java.lang.String">
+		<fieldDescription><![CDATA[selloCFD]]></fieldDescription>
+	</field>
+	<field name="fechaTimbrado" class="javax.xml.datatype.XMLGregorianCalendar">
+		<fieldDescription><![CDATA[fechaTimbrado]]></fieldDescription>
+	</field>
+	<field name="noCertificadoSAT" class="java.lang.String">
+		<fieldDescription><![CDATA[noCertificadoSAT]]></fieldDescription>
+	</field>
+	<field name="UUID" class="java.lang.String">
+		<fieldDescription><![CDATA[UUID]]></fieldDescription>
+	</field>
+	<field name="version" class="java.lang.String">
+		<fieldDescription><![CDATA[version]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="135" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="150" y="0" width="422" height="12" uuid="c6b9fc80-a0c0-4c7e-a5b6-1d2f419711a5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Sello digital del CFDI]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="150" y="12" width="422" height="10" forecolor="#424242" uuid="ea9c3e4c-4aa2-4a24-a0fc-e87ea07f697c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Monospaced" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{selloCFD}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="150" y="22" width="422" height="12" uuid="54ace018-4178-414c-965c-be21d8aa3398">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Sello digital del SAT]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="150" y="34" width="422" height="10" forecolor="#424242" uuid="1d115368-31c4-4910-b126-4f86312079d3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Monospaced" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{selloSAT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="150" y="66" width="90" height="12" uuid="00af52a0-eda0-44ae-b20e-68d6c5861593">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[RFC del PAC]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="150" y="78" width="90" height="10" forecolor="#424242" uuid="78d10c8f-b9ed-4b7b-b5da-b36eef1bed68">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Monospaced" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rfcProvCertif}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="240" y="66" width="122" height="12" uuid="0a36a5e5-5384-4ca2-b800-d629ddeebda3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fecha - Hora de certificación]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="240" y="78" width="122" height="10" forecolor="#424242" uuid="49a4da53-a95c-49ed-ba58-b0e263f3146a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Monospaced" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaTimbrado}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="362" y="78" width="132" height="10" forecolor="#424242" uuid="6e61ab9d-8cac-4ea1-9087-ae41c337ec54">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Monospaced" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noCertificadoSAT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="362" y="66" width="132" height="12" uuid="2619d8ff-6911-4841-85c1-bd3bb399af26">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Núm. serie del certificado SAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="150" y="44" width="422" height="12" uuid="2eafa070-47dd-4533-95b2-ea7aeabebdbd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Cadena original]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="150" y="56" width="422" height="10" forecolor="#424242" uuid="45d2bc4d-c40c-401b-b52e-781a7695d1b1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Monospaced" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["||" + $F{version} + "|" + $F{UUID} + "|" + $F{fechaTimbrado} + "|" + $F{rfcProvCertif} + "|" +  $P{comprobante}.getSello() + "|" + $F{noCertificadoSAT} + "||"]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="0" y="0" width="135" height="135" uuid="4f101033-b86c-4aa7-bd7d-8d0f6b326b50">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.margin" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.components.qrcode.character.encoding"><![CDATA["UTF-8"]]></propertyExpression>
+				</reportElement>
+				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" margin="0" errorCorrectionLevel="M">
+					<jr:codeExpression><![CDATA["https://verificacfdi.facturaelectronica.sat.gob.mx/default.aspx?id=" + $F{UUID}
++ "&re=" + $P{comprobante}.getEmisor().getRfc()
++ "&rr=" + $P{comprobante}.getReceptor().getRfc()
++ "&tt=" + $P{comprobante}.getTotal()
++ "&fe=" + $P{comprobante}.getSello().substring($P{comprobante}.getSello().length() - 8)]]></jr:codeExpression>
+				</jr:QRCode>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

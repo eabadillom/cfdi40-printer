@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.19.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cfdi-v40" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="40caf765-1624-4700-bed7-81771de090ee">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CFDI40 Data Adapter"/>
+	<property name="com.jaspersoft.studio.report.description" value="Plantilla para CFDI 4.0"/>
+	<parameter name="comprobante" class="mx.gob.sat.cfdi.v40.Comprobante"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String"/>
+	<parameter name="DS_EMISOR" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource">
+		<parameterDescription><![CDATA[Emisor]]></parameterDescription>
+	</parameter>
+	<parameter name="DS_RECEPTOR" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="DS_CONCEPTOS" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="DS_IMPUESTOS" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="DS_IMPUESTOS_LOCALES" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="DS_TFD" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="DS_TFD_FOOTER" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="DS_PAGOS" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="SUBREPORT_DIR_PAGOS" class="java.lang.String"/>
+	<parameter name="pagos" class="mx.gob.sat.cfdi.pagos20.Pagos" isForPrompting="false">
+		<parameterDescription><![CDATA[Pagos (complemento de pago v.2.0)]]></parameterDescription>
+	</parameter>
+	<parameter name="observacion" class="java.lang.String"/>
+	<parameter name="uuid" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="exportacion" class="java.lang.String">
+		<fieldDescription><![CDATA[exportacion]]></fieldDescription>
+	</field>
+	<field name="subTotal" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[subTotal]]></fieldDescription>
+	</field>
+	<field name="condicionesDePago" class="java.lang.String">
+		<fieldDescription><![CDATA[condicionesDePago]]></fieldDescription>
+	</field>
+	<field name="metodoPago" class="mx.gob.sat.cfdi.catalogos.CMetodoPago">
+		<fieldDescription><![CDATA[metodoPago]]></fieldDescription>
+	</field>
+	<field name="total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[total]]></fieldDescription>
+	</field>
+	<field name="moneda" class="mx.gob.sat.cfdi.catalogos.CMoneda">
+		<fieldDescription><![CDATA[moneda]]></fieldDescription>
+	</field>
+	<field name="sello" class="java.lang.String">
+		<fieldDescription><![CDATA[sello]]></fieldDescription>
+	</field>
+	<field name="lugarExpedicion" class="java.lang.String">
+		<fieldDescription><![CDATA[lugarExpedicion]]></fieldDescription>
+	</field>
+	<field name="tipoCambio" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[tipoCambio]]></fieldDescription>
+	</field>
+	<field name="descuento" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[descuento]]></fieldDescription>
+	</field>
+	<field name="tipoDeComprobante" class="mx.gob.sat.cfdi.catalogos.CTipoDeComprobante">
+		<fieldDescription><![CDATA[tipoDeComprobante]]></fieldDescription>
+	</field>
+	<field name="noCertificado" class="java.lang.String">
+		<fieldDescription><![CDATA[noCertificado]]></fieldDescription>
+	</field>
+	<field name="version" class="java.lang.String">
+		<fieldDescription><![CDATA[version]]></fieldDescription>
+	</field>
+	<field name="certificado" class="java.lang.String">
+		<fieldDescription><![CDATA[certificado]]></fieldDescription>
+	</field>
+	<field name="confirmacion" class="java.lang.String">
+		<fieldDescription><![CDATA[confirmacion]]></fieldDescription>
+	</field>
+	<field name="fecha" class="javax.xml.datatype.XMLGregorianCalendar">
+		<fieldDescription><![CDATA[fecha]]></fieldDescription>
+	</field>
+	<field name="folio" class="java.lang.String">
+		<fieldDescription><![CDATA[folio]]></fieldDescription>
+	</field>
+	<field name="serie" class="java.lang.String">
+		<fieldDescription><![CDATA[serie]]></fieldDescription>
+	</field>
+	<field name="formaPago" class="java.lang.String">
+		<fieldDescription><![CDATA[formaPago]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="145" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<subreport>
+				<reportElement x="0" y="0" width="572" height="145" uuid="e7713f8f-21a9-47dc-ac0c-eba24cd1229e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<subreportParameter name="comprobante">
+					<subreportParameterExpression><![CDATA[$P{comprobante}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{DS_TFD}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/tfd/v11/tfd-v11-header.jasper"]]></subreportExpression>
+			</subreport>
+			<image>
+				<reportElement x="0" y="0" width="150" height="60" uuid="44af34f9-3af8-48f1-9e7b-25f31e7279b2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="137" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<subreport>
+				<reportElement x="0" y="0" width="572" height="75" uuid="dc651c85-0e9e-45d4-9ac3-0aadd180af85">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<subreportParameter name="DS_IMPUESTOS">
+					<subreportParameterExpression><![CDATA[$P{DS_IMPUESTOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="DS_IMPUESTOS_LOCALES">
+					<subreportParameterExpression><![CDATA[$P{DS_IMPUESTOS_LOCALES}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="comprobante">
+					<subreportParameterExpression><![CDATA[$P{comprobante}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="observacion">
+					<subreportParameterExpression><![CDATA[$P{observacion}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{DS_CONCEPTOS}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/factura/v40/cfdi-v40-conceptos.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="79" width="572" height="52" uuid="4853d2de-07fe-47a2-9f92-a682b5a9e816">
+					<printWhenExpression><![CDATA[$P{DS_PAGOS}  !=  null]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="pagos">
+					<subreportParameterExpression><![CDATA[$P{pagos}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{DS_PAGOS}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/pagos/v20/pagos-v20.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="35" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="163" y="0" width="246" height="12" uuid="959e7d42-0631-493f-85d4-c94b53cd64d3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Este documento es una representación impresa de un CFDI]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="470" y="0" width="56" height="12" uuid="cfab0ed9-72da-490a-bdac-caff4f023b05">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pág. " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="526" y="0" width="46" height="12" uuid="04efa06c-176c-44b6-8144-b6843acce7d4">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="163" height="12" uuid="18d14de7-5d4e-4de7-bf91-48470d585d75"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{uuid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="155">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="102" y="135" width="368" height="20" uuid="3b5a167c-ade3-4983-a2fe-fef832fa83cf">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Este documento es una representación impresa de un CFDI]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="470" y="135" width="56" height="20" uuid="45d90e75-cebd-46c2-9e36-00830940c948">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pág. " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="526" y="135" width="46" height="20" uuid="5400fac1-aebc-4ebb-adbb-462cf13bcd73">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="0" width="572" height="135" uuid="22eb70eb-753f-42ae-8da3-0bd34581dbe8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<subreportParameter name="comprobante">
+					<subreportParameterExpression><![CDATA[$P{comprobante}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{DS_TFD_FOOTER}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/tfd/v11/tfd-v11-footer.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</lastPageFooter>
+</jasperReport>

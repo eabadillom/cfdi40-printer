@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.19.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cfdi-v40-conceptos-summary" pageWidth="572" pageHeight="792" columnWidth="572" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="bf0c830b-fb74-49d9-8b7c-d561fa2412c2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="totaldeRetenciones" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[totaldeRetenciones]]></fieldDescription>
+	</field>
+	<field name="totaldeTraslados" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[totaldeTraslados]]></fieldDescription>
+	</field>
+	<field name="version" class="java.lang.String">
+		<fieldDescription><![CDATA[version]]></fieldDescription>
+	</field>
+	<field name="retencionesLocalesAndTrasladosLocales" class="java.util.List">
+		<fieldDescription><![CDATA[retencionesLocalesAndTrasladosLocales]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField textAdjust="StretchHeight" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="372" y="0" width="200" height="10" isRemoveLineWhenBlank="true" forecolor="#424242" uuid="4b3768b0-03e4-40e5-9916-20b6379e1c87">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Left">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totaldeRetenciones}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="286" y="0" width="86" height="10" isRemoveLineWhenBlank="true" uuid="7cdcc46c-faab-41f4-9b58-672a2b9f841b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="2" rightPadding="4"/>
+				<textElement textAlignment="Right">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total retenciones]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="0" width="86" height="10" isRemoveLineWhenBlank="true" uuid="96951b43-abfd-4826-a7cd-b02dbf60c487">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="2" rightPadding="4"/>
+				<textElement textAlignment="Right">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total traslados]]></text>
+			</staticText>
+			<textField pattern="¤#,##0.##;¤-#,##0.##">
+				<reportElement positionType="Float" x="86" y="0" width="200" height="10" isRemoveLineWhenBlank="true" forecolor="#424242" uuid="bf800e87-025e-408f-ab54-d00a3726622c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totaldeTraslados}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="216" y="10" width="355" height="15" isRemoveLineWhenBlank="true" forecolor="#424242" uuid="632de6ab-edf6-4b38-b4ff-52db5a5bf8ed">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.ferbo.cfdi.tools.ImpuestoLocalTool.formatearRetenciones($F{retencionesLocalesAndTrasladosLocales})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

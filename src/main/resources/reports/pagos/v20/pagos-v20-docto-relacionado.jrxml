@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.19.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pagos-v20-docto-relacionado" pageWidth="572" pageHeight="752" columnWidth="572" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="99cc1151-cf9a-40b1-aa9b-aa960bcf91d1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="monedaDR" class="mx.gob.sat.cfdi.catalogos.CMoneda">
+		<fieldDescription><![CDATA[monedaDR]]></fieldDescription>
+	</field>
+	<field name="impPagado" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[impPagado]]></fieldDescription>
+	</field>
+	<field name="equivalenciaDR" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[equivalenciaDR]]></fieldDescription>
+	</field>
+	<field name="idDocumento" class="java.lang.String">
+		<fieldDescription><![CDATA[idDocumento]]></fieldDescription>
+	</field>
+	<field name="folio" class="java.lang.String">
+		<fieldDescription><![CDATA[folio]]></fieldDescription>
+	</field>
+	<field name="impSaldoInsoluto" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[impSaldoInsoluto]]></fieldDescription>
+	</field>
+	<field name="serie" class="java.lang.String">
+		<fieldDescription><![CDATA[serie]]></fieldDescription>
+	</field>
+	<field name="impuestosDR" class="mx.gob.sat.cfdi.pagos20.Pagos.Pago.DoctoRelacionado.ImpuestosDR">
+		<fieldDescription><![CDATA[impuestosDR]]></fieldDescription>
+	</field>
+	<field name="numParcialidad" class="java.math.BigInteger">
+		<fieldDescription><![CDATA[numParcialidad]]></fieldDescription>
+	</field>
+	<field name="objetoImpDR" class="java.lang.String">
+		<fieldDescription><![CDATA[objetoImpDR]]></fieldDescription>
+	</field>
+	<field name="impSaldoAnt" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[impSaldoAnt]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="65" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="20" y="3" width="185" height="10" uuid="2918ad05-3196-4796-a740-2a20e6714b3e">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Id. Documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="23" width="60" height="10" uuid="d874485d-fc90-4131-8fb8-467876a602a4">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Serie]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="20" y="13" width="185" height="10" forecolor="#424242" uuid="b191d3fc-6856-4b0b-a422-274ec7b5d9d4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idDocumento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="33" width="60" height="10" forecolor="#424242" uuid="a08c7643-bebf-4922-873a-5c816c1d6263">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serie}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="23" width="60" height="10" uuid="2d361711-097b-472d-bc1a-ded19cde5fdd">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Folio]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="33" width="60" height="10" forecolor="#424242" uuid="40462cea-8088-4f6e-a312-db4475d8b3ff">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{folio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="211" y="3" width="40" height="10" uuid="ab8cd7af-d001-42b6-a7fe-1e1db0d214ba">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Moneda]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="211" y="13" width="40" height="10" forecolor="#424242" uuid="3127e481-6cca-48f0-921c-820aa552581a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monedaDR}.value()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="251" y="3" width="60" height="10" uuid="4ef0b269-ec0b-4ccb-a7fc-feb877a42d52">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Equivalencia]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="251" y="13" width="60" height="10" forecolor="#424242" uuid="261d1851-daba-47da-8409-3cbc68e2a771">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equivalenciaDR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="23" width="60" height="10" uuid="b5d38108-7696-4a00-b511-47004df83d41">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Parcialidad]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="33" width="60" height="10" forecolor="#424242" uuid="a18f3d50-2f17-41c4-b4d3-4f0ac91621f3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numParcialidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="311" y="3" width="87" height="10" uuid="9162c0d2-ec96-427c-ac8b-38dd3a5495d5">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Saldo anterior]]></text>
+			</staticText>
+			<textField pattern="¤#,##0.00;¤-#,##0.00">
+				<reportElement x="311" y="13" width="87" height="10" forecolor="#424242" uuid="1f27dd4f-a24f-4fd3-8d41-82e4954ee5f1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impSaldoAnt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="398" y="3" width="87" height="10" uuid="ac1815d8-2710-4302-92df-1a103fd39efb">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Importe pagado]]></text>
+			</staticText>
+			<textField pattern="¤#,##0.00;¤-#,##0.00">
+				<reportElement x="398" y="13" width="87" height="10" forecolor="#424242" uuid="68a87c8e-7b5a-425c-afea-42aaf0b21d88">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impPagado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="485" y="3" width="87" height="10" uuid="c2cdba5f-5c45-4cc2-b83d-7780c14700f7">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Saldo insoluto]]></text>
+			</staticText>
+			<textField pattern="¤#,##0.00;¤-#,##0.00">
+				<reportElement x="485" y="13" width="87" height="10" forecolor="#424242" uuid="abde0ef8-1123-41b5-b74f-2dc31458ff81">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impSaldoInsoluto}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="20" y="56" width="244" height="9" forecolor="#424242" uuid="5d4f43d7-3b1b-4a2a-8acb-fbda027be3b5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.ferbo.cfdi.tools.DoctoRelacionadoImpuestoTool
+.formatearTraslados($F{impuestosDR})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="46" width="185" height="10" forecolor="#000000" uuid="b4205497-9f90-4435-b996-8188bf9e49e6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.ferbo.cfdi.catalogs.CatalogoObjetoImpuesto.obtenerLeyenda($F{objetoImpDR})]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="308" y="56" width="244" height="9" isRemoveLineWhenBlank="true" uuid="28642c9a-193b-418b-b787-a978d6af0e63">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.ferbo.cfdi.tools.DoctoRelacionadoImpuestoTool
+.formatearRetenciones($F{impuestosDR})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
