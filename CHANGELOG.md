@@ -1,0 +1,16 @@
+#Changelog
+
+Todos los cambios importantes en este proyecto serán documentados en este archivo.
+
+Este proyecto sigue versionado semántico (SemVer) y el formato de [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/).
+
+## [1.0.0] - 2026-11-12
+
+### Added
+
+- Proyecto Maven `cfdi40-printer`para implementar la logica de negocio de carga de información de los archivos XML del CFDI 4.0 del SAT e imprimirlos en JasperReports 6.x, compatible con JDK 8.
+- Tipos de CFDI soportados:
+  - CFDI 4.0 Tipo Ingresos.
+  - Complemento de pago 2.0
+- Soporte para lectura del XML del SAT, desde InputStream y Filesystem.
+- Depende de [cfdi40-model](https://github.com/eabadillom/cfdi40-model) versión 1.0.0 
